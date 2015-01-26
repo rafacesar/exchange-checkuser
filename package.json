@@ -1,0 +1,28 @@
+{
+  "name": "exchange-checkuser",
+  "version": "1.0.0",
+  "description": "A way to check if an user exists in Microsoft Exchange",
+  "main": "index.js",
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafacesar/exchange-checkuser.git"
+  },
+  "keywords": [
+    "Microsoft",
+    "Exchange",
+    "OWA",
+    "EWS",
+    "Outlook",
+    "NTLM",
+    "Authentication"
+  ],
+  "author": "rafa.cesar@gmail.com",
+  "license": "GPL-3",
+  "bugs": {
+    "url": "https://github.com/rafacesar/exchange-checkuser/issues"
+  },
+  "homepage": "https://github.com/rafacesar/exchange-checkuser"
+}
