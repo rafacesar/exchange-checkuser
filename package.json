@@ -1,6 +1,6 @@
 {
   "name": "exchange-checkuser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A way to check if an user exists in Microsoft Exchange",
   "main": "index.js",
   "scripts": {
@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/rafacesar/exchange-checkuser/issues"
   },
-  "homepage": "https://github.com/rafacesar/exchange-checkuser"
+  "homepage": "https://github.com/rafacesar/exchange-checkuser",
+  "dependencies": {
+    "curlrequest": "^0.5.1"
+  }
 }
