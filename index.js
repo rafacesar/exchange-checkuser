@@ -21,16 +21,37 @@ var getStatusCode = function(response) {
 		return -1;
 };
 
-module.exports = function(server,username,password,cb){
+module.exports = function(server,username,password,insecure,endpoint,cb){
 	'use strict';
-	var url = "https://" + server + "/EWS/Exchange.asmx";
-	
+	if (typeof insecure === "function" && cb === undefined) {
+		cb = insecure;
+	}
+
+	if (typeof endpoint === "function" && cb === undefined) {
+		cb = endpoint;
+	}
+
+	if (typeof insecure !== "boolean") {
+		insecure = false;
+
+		if (typeof insecure === "string" && typeof endpoint === "function") {
+			endpoint = insecure;
+		}
+	}
+
+	if (typeof endpoint !== "string") {
+		endpoint = "Exchange.asmx";
+	}
+
+	var url = "https://" + server + "/EWS/" + endpoint;
+
 
 	curl.request({
 		url: url,
 		head: true,
 		user: username+':'+password,
-		ntlm: true
+		ntlm: true,
+		insecure: insecure
 	},function(err, res) {
 		var statusCode = getStatusCode(res);
 
